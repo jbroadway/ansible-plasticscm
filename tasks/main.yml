@@ -30,7 +30,7 @@
     template: src=db.conf dest=/opt/plasticscm5/server/db.conf
   
   - name: copy plasticscm config files
-    shell: cp /opt/plasticscm5/server/*.conf {{plasticscm_conf_dir}}/
+    shell: cp -n /opt/plasticscm5/server/*.conf {{plasticscm_conf_dir}}/
   
   - name: restart plasticscm
     shell: /usr/sbin/service plasticsd restart
