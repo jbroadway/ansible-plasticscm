@@ -1,6 +1,6 @@
 # ansible-plasticscm
 
-An Ansible role for installing Plastic SCM.
+An Ansible role for installing [Plastic SCM](https://www.plasticscm.com/).
 
 ## Example Playbook
 
