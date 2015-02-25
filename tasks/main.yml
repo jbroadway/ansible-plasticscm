@@ -19,3 +19,18 @@
   
   - name: install plasticscm-server-complete
     apt: pkg=plasticscm-server-complete state=present
+  
+  - name: create plasticscm data dir
+    shell: mkdir -p {{plasticscm_data_dir}}
+  
+  - name: create plasticscm conf dir
+    shell: mkdir -p {{plasticscm_conf_dir}}
+  
+  - name: set plasticscm data dir
+    template: src=templates/db.conf dest=/opt/plasticscm5/server/db.conf
+  
+  - name: copy plasticscm config files
+    shell: cp /opt/plasticscm5/server/*.conf {{plasticscm_conf_dir}}/
+  
+  - name: restart plasticscm
+    shell: /usr/sbin/service plasticsd restart

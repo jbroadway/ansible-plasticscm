@@ -1,0 +1,12 @@
+---
+  - name: install ufw
+    apt: pkg=ufw state=present
+  
+  - name: open port 22
+    shell: ufw allow 22
+  
+  - name: open port {{plasticscm_port}}
+    shell: ufw allow {{plasticscm_port}}
+  
+  - name: enable firewall
+    shell: yes | ufw enable

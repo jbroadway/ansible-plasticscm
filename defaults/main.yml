@@ -1,0 +1,5 @@
+# file: ansible-plasticscm/defaults/main.yml
+
+plasticscm_port: 8087
+plasticscm_data_dir: "/var/lib/plasticscm/data"
+plasticscm_conf_dir: "/var/lib/plasticscm/conf"
