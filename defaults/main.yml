@@ -1,5 +1,6 @@
 # file: ansible-plasticscm/defaults/main.yml
 
+plasticscm_distro: "Ubuntu_14.04"
 plasticscm_port: 8087
 plasticscm_data_dir: "/var/lib/plasticscm/data"
 plasticscm_conf_dir: "/var/lib/plasticscm/conf"

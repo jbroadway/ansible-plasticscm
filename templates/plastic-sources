@@ -60,10 +60,10 @@ deb-src http://security.ubuntu.com/ubuntu trusty-security universe
 # deb-src http://security.ubuntu.com/ubuntu trusty-security multiverse
 
 # PlasticSCM common packages repository
-deb https://www.plasticscm.com/plasticrepo/plasticscm-common/Ubuntu_14.04/ ./
+deb https://www.plasticscm.com/plasticrepo/plasticscm-common/{{plasticscm_distro}}/ ./
 
 # PlasticSCM-latest repository
-deb https://www.plasticscm.com/plasticrepo/plasticscm-latest/Ubuntu_14.04/ ./
+deb https://www.plasticscm.com/plasticrepo/plasticscm-latest/{{plasticscm_distro}}/ ./
 
 # Alternative: PlasticSCM-stable repository (This one can be setup **instead of** PlasticSCM-latest)
-deb https://www.plasticscm.com/plasticrepo/plasticscm-stable/Ubuntu_14.04/ ./
+deb https://www.plasticscm.com/plasticrepo/plasticscm-stable/{{plasticscm_distro}}/ ./

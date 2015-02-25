@@ -3,16 +3,16 @@
     apt: pkg=apt-transport-https state=present
   
   - name: add plasticscm sources
-    template: src=templates/plastic-sources dest=/etc/apt/sources.list
+    template: src=plastic-sources dest=/etc/apt/sources.list
   
   - name: add plasticscm key 1
-    shell: wget https://www.plasticscm.com/plasticrepo/plasticscm-common/Ubuntu_14.04/Release.key -O - | sudo apt-key add -
+    shell: wget https://www.plasticscm.com/plasticrepo/plasticscm-common/{{plasticscm_distro}}/Release.key -O - | sudo apt-key add -
   
   - name: add plasticscm key 2
-    shell: wget https://www.plasticscm.com/plasticrepo/plasticscm-latest/Ubuntu_14.04/Release.key -O - | sudo apt-key add -
+    shell: wget https://www.plasticscm.com/plasticrepo/plasticscm-latest/{{plasticscm_distro}}/Release.key -O - | sudo apt-key add -
   
   - name: add plasticscm key 3
-    shell: wget https://www.plasticscm.com/plasticrepo/plasticscm-stable/Ubuntu_14.04/Release.key -O - | sudo apt-key add -
+    shell: wget https://www.plasticscm.com/plasticrepo/plasticscm-stable/{{plasticscm_distro}}/Release.key -O - | sudo apt-key add -
   
   - name: apt-get update again
     shell: apt-get -y update
@@ -27,7 +27,7 @@
     shell: mkdir -p {{plasticscm_conf_dir}}
   
   - name: set plasticscm data dir
-    template: src=templates/db.conf dest=/opt/plasticscm5/server/db.conf
+    template: src=db.conf dest=/opt/plasticscm5/server/db.conf
   
   - name: copy plasticscm config files
     shell: cp /opt/plasticscm5/server/*.conf {{plasticscm_conf_dir}}/
